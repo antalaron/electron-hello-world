@@ -1,0 +1,60 @@
+{
+  "name": "electron-hello-world",
+  "version": "v0.1.0",
+  "description": "Hello World!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/antalaron/electron-hello-world.git"
+  },
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "build --publish onTagOrDraft"
+  },
+  "author": {
+    "name": "Antal Áron",
+    "email": "antalaron@antalaron.hu",
+    "url": "https://antalaron.hu"
+  },
+  "license": "MIT",
+  "build": {
+    "appId": "hu.antalaron.electron-hello-world",
+    "productName": "Hello World",
+    "files": [
+      "dist/",
+      "node_modules/",
+      "main.js",
+      "index.html",
+      "package.json",
+      "package-lock.json"
+    ],
+    "dmg": {
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^1.7.11",
+    "electron-builder": "^19.55.2"
+  }
+}
